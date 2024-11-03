@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect - Farmpact</title>
+    <link rel="stylesheet" href="connect.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="Farmpact Logo" class="logo-img">
+            <span class="site-name">Farmpact</span>
+        </div>
+        <ul class="menu">
+            <li><a href="FarmPact.html">Home</a></li>
+            <li>
+                <a href="book-crops.html">Book Crop</a>
+                <ul class="dropdown">
+                    <li>Book New Crop</li>
+                    <li>Dynamic Price Calculator</li>
+                    <li>Previous Booking</li>
+                    <li>Current Market Price</li>
+                    <li>Payment Methods</li>
+                </ul>
+            </li>
+            <li>
+                <a href="crop-monitoring.html">Crop Monitoring</a>
+                <ul class="dropdown">
+                    <li>Soil Analysis</li>
+                    <li>Crop Pattern</li>
+                    <li>Disease Prediction</li>
+                    <li>Fertilizer Check</li>
+                </ul>
+            </li>
+            <li>
+                <a href="be-prepared.html">Be Prepared</a>
+                <ul class="dropdown">
+                    <li>Weather Forecast</li>
+                    <li>Nearby Wholesalers</li>
+                    <li>Risk Reduction</li>
+                    <li>Rent Tools</li>
+                </ul>
+            </li>
+            <li>
+                <a href="smart-farming.html">Smart Farming</a>
+                <ul class="dropdown">
+                    <li>Waste Reduction</li>
+                    <li>Carbon Footprint</li>
+                    <li>Water Footprint</li>
+                    <li>Alternative Sustainable Practices</li>
+                </ul>
+            </li>
+            <li>
+                <a href="research_request.html">Researcher's Request</a>
+                <ul class="dropdown">
+                    <li>Data Analytics</li>
+                    <li>Request Sample</li>
+                    <li>Talk to Farmer</li>
+                </ul>
+            </li>
+            <li>
+                <a href="connect.html">Connect</a>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="up-session.html">Upcoming Sessions</a></li>
+        </ul>
+    </nav>
+
+    <div class="connect-section">
+        <h1>Connect with Farmers</h1>
+        <div class="chat-list">
+            <div class="chat-item" onclick="openChat('Rahul Sharma', 'राहुल शर्मा')">
+                <span class="chat-name">Rahul Sharma</span>
+                <span class="last-message">नमस्ते! कैसे हैं आप? (Hello! How are you?)</span>
+            </div>
+            <div class="chat-item" onclick="openChat('Aditi Gupta', 'आदिति गुप्ता')">
+                <span class="chat-name">Aditi Gupta</span>
+                <span class="last-message">फसल कैसे चल रही है? (How is the crop going?)</span>
+            </div>
+            <div class="chat-item" onclick="openChat('Ravi Kumar', 'रवि कुमार')">
+                <span class="chat-name">Ravi Kumar</span>
+                <span class="last-message">बिल्कुल सही! (Absolutely right!)</span>
+            </div>
+            <div class="chat-item" onclick="openChat('Sita Devi', 'सीता देवी')">
+                <span class="chat-name">Sita Devi</span>
+                <span class="last-message">क्या आपको बीज चाहिए? (Do you need seeds?)</span>
+            </div>
+            <div class="chat-item" onclick="openChat('Vikram Singh', 'विक्रम सिंह')">
+                <span class="chat-name">Vikram Singh</span>
+                <span class="last-message">इस मौसम में कैसे खेती करें? (How to farm in this weather?)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-window" id="chat-window" style="display:none;">
+        <div class="chat-header">
+            <span id="chat-header-name"></span>
+            <button onclick="closeChat()">Close</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <!-- Messages will appear here -->
+        </div>
+        <form id="messageForm">
+            <input type="text" id="messageInput" placeholder="Type a message..." required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <script>
+        function openChat(name, nameInHindi) {
+            document.getElementById('chat-window').style.display = 'block';
+            document.getElementById('chat-header-name').innerText = name + ' (' + nameInHindi + ')';
+            document.getElementById('chat-messages').innerHTML = ''; // Clear previous messages
+        }
+
+        function closeChat() {
+            document.getElementById('chat-window').style.display = 'none';
+        }
+
+        document.getElementById('messageForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value;
+
+            const messageElement = document.createElement('div');
+            messageElement.className = 'chat-message sent';
+            messageElement.innerText = message;
+            document.getElementById('chat-messages').appendChild(messageElement);
+            messageInput.value = ''; // Clear input
+        });
+    </script>
+</body>
+</html>

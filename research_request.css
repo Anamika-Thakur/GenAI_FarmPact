@@ -1,0 +1,126 @@
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .site-name {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu > li {
+    position: relative;
+    margin: 0 15px;
+  }
+  
+  .menu > li > a {
+    color: white;
+    text-decoration: none;
+    padding: 0px;
+  }
+  
+  .menu > li:hover .dropdown {
+    display: block;
+  }
+  
+  /* Dropdown Menu */
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #555;
+    padding: 10px 0;
+    list-style: none;
+    width: 200px;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  .dropdown li {
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.3s;
+  }
+  
+  .dropdown li:hover {
+    background-color: #777;
+  }
+  
+
+.research-request-section {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#dataAnalyticsResult, #sampleRequestResult, #talkToFarmerResult {
+    background: #e3f2fd;
+    border: 1px solid #bbdefb;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}

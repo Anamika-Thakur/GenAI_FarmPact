@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .site-name {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu > li {
+    position: relative;
+    margin: 0 15px;
+  }
+  
+  .menu > li > a {
+    color: white;
+    text-decoration: none;
+    padding: 0px;
+  }
+  
+  .menu > li:hover .dropdown {
+    display: block;
+  }
+  
+  /* Dropdown Menu */
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #555;
+    padding: 10px 0;
+    list-style: none;
+    width: 200px;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  .dropdown li {
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.3s;
+  }
+  
+  .dropdown li:hover {
+    background-color: #777;
+  }
+  
+
+.be-prepared-section {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #333;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+#weatherWidget {
+    background: #e3f2fd;
+    border: 1px solid #bbdefb;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#riskAssessment {
+    background: #ffebee;
+    border: 1px solid #ffcdd2;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#wholesalerList, #toolList {
+    margin-top: 10px;
+}
+
+#wholesalerList ul, #toolList ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#wholesalerList li, #toolList li {
+    background: #f1f1f1;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.show {
+    display: block;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hide {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu li {
+        margin: 5px 0;
+    }
+}

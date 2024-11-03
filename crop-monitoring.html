@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Monitoring</title>
+    <link rel="stylesheet" href="crop-monitoring.css">
+</head>
+<body>
+
+        <!-- Navbar -->
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Farmpact Logo" class="logo-img">
+                <span class="site-name">Farmpact</span>
+            </div>
+            <ul class="menu">
+                <li><a href="FarmPact.html">Home</a></li>
+                <li>
+                    <a href="book-crops.html">Book Crop</a>
+                    <ul class="dropdown">
+                        <li>Book New Crop</li>
+                        <li>Dynamic Price Calculator</li>
+                        <li>Previous Booking</li>
+                        <li>Current Market Price</li>
+                        <li>Payment Methods</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="crop-monitoring.html">Crop Monitoring</a>
+                    <ul class="dropdown">
+                        <li>Soil Analysis</li>
+                        <li>Crop Pattern</li>
+                        <li>Disease Prediction</li>
+                        <li>Fertilizer Check</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="be-prepared.html">Be Prepared</a>
+                    <ul class="dropdown">
+                        <li>Weather Forecast</li>
+                        <li>Nearby Wholesalers</li>
+                        <li>Risk Reduction</li>
+                        <li>Rent Tools</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="smart-farming.html">Smart Farming</a>
+                    <ul class="dropdown">
+                        <li>Waste Reduction</li>
+                        <li>Carbon Footprint</li>
+                        <li>Water Footprint</li>
+                        <li>Alternative Sustainable Practices</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="researchers-request.html">Researcher's Request</a>
+                    <ul class="dropdown">
+                        <li>Data Analytics</li>
+                        <li>Request Sample</li>
+                        <li>Talk to Farmer</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="connect.html">Connect</a>
+                </li>
+                <li><a href="#our-process">Our Process</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="up-session.html">Upcoming Sessions</a></li>
+            </ul>
+        </nav>
+
+    <!-- Main Content for Crop Monitoring -->
+    <section class="crop-monitoring-section">
+        <h1>Crop Monitoring</h1>
+
+        <!-- Crop Health Checking Section -->
+        <div class="section" id="crop-health-check">
+            <h2>Crop Health Checking</h2>
+            <form id="cropHealthForm">
+                <label for="cropTypeHealth">Crop Type:</label>
+                <select id="cropTypeHealth" name="cropTypeHealth">
+                    <option value="Wheat">Wheat</option>
+                    <option value="Rice">Rice</option>
+                    <option value="Corn">Corn</option>
+                    <!-- Add more options as needed -->
+                </select><br>
+
+                <label for="cropAge">Crop Age (weeks):</label>
+                <input type="number" id="cropAge" name="cropAge" min="1" required><br>
+
+                <button type="submit">Check Health</button>
+            </form>
+            <div id="healthResult" style="display: none; margin-top: 1rem;"></div>
+        </div>
+
+        <!-- Fertilizer Recommendation Section -->
+        <div class="section" id="fertilizer-recommendation">
+            <h2>Fertilizer Recommendation</h2>
+            <form id="fertilizerForm">
+                <label for="soilType">Soil Type:</label>
+                <select id="soilType" name="soilType">
+                    <option value="clay">Clay</option>
+                    <option value="sandy">Sandy</option>
+                    <option value="loam">Loam</option>
+                </select><br>
+
+                <label for="cropTypeFert">Crop Type:</label>
+                <select id="cropTypeFert" name="cropTypeFert">
+                    <option value="Wheat">Wheat</option>
+                    <option value="Rice">Rice</option>
+                    <option value="Corn">Corn</option>
+                    <!-- Add more options as needed -->
+                </select><br>
+
+                <button type="submit">Get Recommendation</button>
+            </form>
+            <div id="fertilizerResult" style="display: none; margin-top: 1rem;"></div>
+        </div>
+    </section>
+
+    <script>
+        // Crop health checking functionality
+        const cropHealthForm = document.getElementById('cropHealthForm');
+        const healthResult = document.getElementById('healthResult');
+
+        cropHealthForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const cropType = document.getElementById('cropTypeHealth').value;
+            const cropAge = parseInt(document.getElementById('cropAge').value);
+
+            let health = Math.random();
+            let status, recommendation;
+
+            if (health > 0.8) {
+                status = 'Excellent';
+                recommendation = 'Continue with current practices.';
+            } else if (health > 0.6) {
+                status = 'Good';
+                recommendation = 'Minor adjustments to watering or fertilizer may be beneficial.';
+            } else if (health > 0.4) {
+                status = 'Fair';
+                recommendation = 'Consider soil testing and adjusting nutrient levels.';
+            } else {
+                status = 'Poor';
+                recommendation = 'Immediate attention required. Consider consulting with an agricultural expert.';
+            }
+
+            healthResult.innerHTML = `
+                <h4>Crop Health Assessment</h4>
+                <p>Crop: ${cropType}</p>
+                <p>Age: ${cropAge} weeks</p>
+                <p>Health Status: <strong>${status}</strong></p>
+                <p><strong>Recommendation:</strong> ${recommendation}</p>
+            `;
+            healthResult.style.display = 'block';
+            this.reset();
+        });
+
+        // Fertilizer recommendation functionality
+        const fertilizerForm = document.getElementById('fertilizerForm');
+        const fertilizerResult = document.getElementById('fertilizerResult');
+
+        fertilizerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const soilType = document.getElementById('soilType').value;
+            const cropType = document.getElementById('cropTypeFert').value;
+
+            let recommendation;
+            if (soilType === 'clay') {
+                recommendation = 'Use a balanced NPK fertilizer with higher potassium content.';
+            } else if (soilType === 'sandy') {
+                recommendation = 'Use a slow-release fertilizer with higher nitrogen content.';
+            } else {
+                recommendation = 'Use a balanced NPK fertilizer with micronutrients.';
+            }
+
+            fertilizerResult.innerHTML = `
+                <h4>Fertilizer Recommendation</h4>
+                <p>Soil Type: ${soilType}</p>
+                <p>Crop: ${cropType}</p>
+                <p><strong>Recommendation:</strong> ${recommendation}</p>
+            `;
+            fertilizerResult.style.display = 'block';
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>

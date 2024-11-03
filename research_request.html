@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Researchers Request - Farmpact</title>
+    <link rel="stylesheet" href="research_request.css">
+</head>
+<body>
+        <!-- Navbar -->
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Farmpact Logo" class="logo-img">
+                <span class="site-name">Farmpact</span>
+            </div>
+            <ul class="menu">
+                <li><a href="FarmPact.html">Home</a></li>
+                <li>
+                    <a href="book-crops.html">Book Crop</a>
+                    <ul class="dropdown">
+                        <li>Book New Crop</li>
+                        <li>Dynamic Price Calculator</li>
+                        <li>Previous Booking</li>
+                        <li>Current Market Price</li>
+                        <li>Payment Methods</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="crop-monitoring.html">Crop Monitoring</a>
+                    <ul class="dropdown">
+                        <li>Soil Analysis</li>
+                        <li>Crop Pattern</li>
+                        <li>Disease Prediction</li>
+                        <li>Fertilizer Check</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="be-prepared.html">Be Prepared</a>
+                    <ul class="dropdown">
+                        <li>Weather Forecast</li>
+                        <li>Nearby Wholesalers</li>
+                        <li>Risk Reduction</li>
+                        <li>Rent Tools</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="smart-farming.html">Smart Farming</a>
+                    <ul class="dropdown">
+                        <li>Waste Reduction</li>
+                        <li>Carbon Footprint</li>
+                        <li>Water Footprint</li>
+                        <li>Alternative Sustainable Practices</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="researchers-request.html">Researcher's Request</a>
+                    <ul class="dropdown">
+                        <li>Data Analytics</li>
+                        <li>Request Sample</li>
+                        <li>Talk to Farmer</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="connect.html">Connect</a>
+                </li>
+                <li><a href="#our-process">Our Process</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="up-session.html">Upcoming Sessions</a></li>
+            </ul>
+        </nav>
+
+    <div class="research-request-section">
+        <h1>Researcher's Request</h1>
+
+        <!-- Data Analytics Section -->
+        <div class="section">
+            <h2>Data Analytics</h2>
+            <p>Fill out the form to request data analytics services for your research.</p>
+            <form id="dataAnalyticsForm">
+                <label for="researchTopic">Research Topic:</label>
+                <input type="text" id="researchTopic" required>
+                
+                <label for="dataNeeds">Specific Data Needs:</label>
+                <textarea id="dataNeeds" required></textarea>
+                
+                <button type="submit">Request Data Analytics</button>
+            </form>
+            <div id="dataAnalyticsResult" style="display:none;"></div>
+        </div>
+
+        <!-- Request Sample Section -->
+        <div class="section">
+            <h2>Request Sample</h2>
+            <p>Fill out the form to request a sample of agricultural products.</p>
+            <form id="sampleRequestForm">
+                <label for="sampleType">Type of Sample:</label>
+                <input type="text" id="sampleType" required>
+                
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" required>
+                
+                <button type="submit">Request Sample</button>
+            </form>
+            <div id="sampleRequestResult" style="display:none;"></div>
+        </div>
+
+        <!-- Talk to Farmer Section -->
+        <div class="section">
+            <h2>Talk to Farmer</h2>
+            <p>Fill out the form to schedule a talk with a farmer.</p>
+            <form id="talkToFarmerForm">
+                <label for="farmerName">Farmer's Name:</label>
+                <input type="text" id="farmerName" required>
+                
+                <label for="contactInfo">Your Contact Information:</label>
+                <input type="text" id="contactInfo" required>
+                
+                <button type="submit">Schedule Talk</button>
+            </form>
+            <div id="talkToFarmerResult" style="display:none;"></div>
+        </div>
+    </div>
+
+    <script>
+        // Data Analytics Request Functionality
+        const dataAnalyticsForm = document.getElementById('dataAnalyticsForm');
+        const dataAnalyticsResult = document.getElementById('dataAnalyticsResult');
+
+        dataAnalyticsForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const topic = document.getElementById('researchTopic').value;
+            const needs = document.getElementById('dataNeeds').value;
+
+            dataAnalyticsResult.innerHTML = `
+                <h4>Data Analytics Request Submitted</h4>
+                <p>Research Topic: ${topic}</p>
+                <p>Data Needs: ${needs}</p>
+            `;
+            dataAnalyticsResult.style.display = 'block';
+            this.reset();
+        });
+
+        // Sample Request Functionality
+        const sampleRequestForm = document.getElementById('sampleRequestForm');
+        const sampleRequestResult = document.getElementById('sampleRequestResult');
+
+        sampleRequestForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const sampleType = document.getElementById('sampleType').value;
+            const quantity = document.getElementById('quantity').value;
+
+            sampleRequestResult.innerHTML = `
+                <h4>Sample Request Submitted</h4>
+                <p>Sample Type: ${sampleType}</p>
+                <p>Quantity: ${quantity}</p>
+            `;
+            sampleRequestResult.style.display = 'block';
+            this.reset();
+        });
+
+        // Talk to Farmer Functionality
+        const talkToFarmerForm = document.getElementById('talkToFarmerForm');
+        const talkToFarmerResult = document.getElementById('talkToFarmerResult');
+
+        talkToFarmerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const farmerName = document.getElementById('farmerName').value;
+            const contactInfo = document.getElementById('contactInfo').value;
+
+            talkToFarmerResult.innerHTML = `
+                <h4>Talk Scheduled</h4>
+                <p>Farmer's Name: ${farmerName}</p>
+                <p>Your Contact Info: ${contactInfo}</p>
+            `;
+            talkToFarmerResult.style.display = 'block';
+            this.reset();
+        });
+    </script>
+</body>
+</html>

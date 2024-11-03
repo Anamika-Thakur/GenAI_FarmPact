@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .site-name {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu > li {
+    position: relative;
+    margin: 0 15px;
+  }
+  
+  .menu > li > a {
+    color: white;
+    text-decoration: none;
+    padding: 0px;
+  }
+  
+  .menu > li:hover .dropdown {
+    display: block;
+  }
+  
+  /* Dropdown Menu */
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #555;
+    padding: 10px 0;
+    list-style: none;
+    width: 200px;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  .dropdown li {
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.3s;
+  }
+  
+  .dropdown li:hover {
+    background-color: #777;
+  }
+
+.upcoming-sessions {
+    padding: 20px;
+    margin: auto;
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.upcoming-sessions h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+.upcoming-sessions ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.upcoming-sessions li {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upcoming-sessions li:hover {
+    background-color: #f1f1f1;
+}
+
+.upcoming-sessions li:last-child {
+    border-bottom: none;
+}
+
+.upcoming-sessions strong {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.date-time {
+    font-size: 0.9em;
+    color: #666;
+}

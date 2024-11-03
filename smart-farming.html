@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farming - Farmpact</title>
+    <link rel="stylesheet" href="smart-farming.css">
+</head>
+<body>
+        <!-- Navbar -->
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Farmpact Logo" class="logo-img">
+                <span class="site-name">Farmpact</span>
+            </div>
+            <ul class="menu">
+                <li><a href="FarmPact.html">Home</a></li>
+                <li>
+                    <a href="book-crops.html">Book Crop</a>
+                    <ul class="dropdown">
+                        <li>Book New Crop</li>
+                        <li>Dynamic Price Calculator</li>
+                        <li>Previous Booking</li>
+                        <li>Current Market Price</li>
+                        <li>Payment Methods</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="crop-monitoring.html">Crop Monitoring</a>
+                    <ul class="dropdown">
+                        <li>Soil Analysis</li>
+                        <li>Crop Pattern</li>
+                        <li>Disease Prediction</li>
+                        <li>Fertilizer Check</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="be-prepared.html">Be Prepared</a>
+                    <ul class="dropdown">
+                        <li>Weather Forecast</li>
+                        <li>Nearby Wholesalers</li>
+                        <li>Risk Reduction</li>
+                        <li>Rent Tools</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="smart-farming.html">Smart Farming</a>
+                    <ul class="dropdown">
+                        <li>Waste Reduction</li>
+                        <li>Carbon Footprint</li>
+                        <li>Water Footprint</li>
+                        <li>Alternative Sustainable Practices</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="researchers-request.html">Researcher's Request</a>
+                    <ul class="dropdown">
+                        <li>Data Analytics</li>
+                        <li>Request Sample</li>
+                        <li>Talk to Farmer</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="connect.html">Connect</a>
+                </li>
+                <li><a href="#our-process">Our Process</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="up-session.html">Upcoming Sessions</a></li>
+            </ul>
+        </nav>
+
+    <div class="smart-farming-section">
+        <h1>Smart Farming</h1>
+
+        <!-- Waste Reduction Section -->
+        <div class="section">
+            <h2>Waste Reduction</h2>
+            <button onclick="displayWasteReductionTips()">Get Waste Reduction Tips</button>
+            <div id="wasteReductionTips" style="display:none;">
+                <ul>
+                    <li>Implement crop rotation to enhance soil health.</li>
+                    <li>Use cover crops to reduce erosion.</li>
+                    <li>Compost organic waste to enrich soil.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Carbon Footprint Section -->
+        <div class="section">
+            <h2>Carbon Footprint</h2>
+            <button onclick="calculateCarbonFootprint()">Calculate Your Carbon Footprint</button>
+            <div id="carbonFootprintResult" style="display:none;"></div>
+        </div>
+
+        <!-- Water Footprint Section -->
+        <div class="section">
+            <h2>Water Footprint</h2>
+            <button onclick="assessWaterFootprint()">Assess Your Water Footprint</button>
+            <div id="waterFootprintResult" style="display:none;"></div>
+        </div>
+
+        <!-- Alternative Sustainable Practices Section -->
+        <div class="section">
+            <h2>Alternative Sustainable Practices</h2>
+            <button onclick="showSustainablePractices()">View Sustainable Practices</button>
+            <div id="sustainablePractices" style="display:none;">
+                <ul>
+                    <li>Implement precision agriculture techniques.</li>
+                    <li>Utilize organic farming methods.</li>
+                    <li>Engage in agroforestry practices.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Waste Reduction Tips Functionality
+        function displayWasteReductionTips() {
+            const tips = document.getElementById('wasteReductionTips');
+            tips.style.display = tips.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Carbon Footprint Calculation Functionality
+        function calculateCarbonFootprint() {
+            // Placeholder for carbon footprint calculation logic
+            const result = `
+                <h4>Your Carbon Footprint</h4>
+                <p>Estimated Carbon Footprint: 2.5 tons CO2/year</p>
+                <p><strong>Recommendation:</strong> Consider using renewable energy sources.</p>
+            `;
+            document.getElementById('carbonFootprintResult').innerHTML = result;
+            document.getElementById('carbonFootprintResult').style.display = 'block';
+        }
+
+        // Water Footprint Assessment Functionality
+        function assessWaterFootprint() {
+            // Placeholder for water footprint assessment logic
+            const result = `
+                <h4>Your Water Footprint</h4>
+                <p>Estimated Water Footprint: 1500 liters/week</p>
+                <p><strong>Recommendation:</strong> Implement rainwater harvesting systems.</p>
+            `;
+            document.getElementById('waterFootprintResult').innerHTML = result;
+            document.getElementById('waterFootprintResult').style.display = 'block';
+        }
+
+        // Show Sustainable Practices
+        function showSustainablePractices() {
+            const practices = document.getElementById('sustainablePractices');
+            practices.style.display = practices.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
