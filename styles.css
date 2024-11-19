@@ -207,6 +207,11 @@ nav {
   font-size: 31px;
 }
 
+.sketchfab-embed-wrapper iframe {
+  width: 100%;
+  height: 500px; /* Adjust as per design */
+}
+
 
 /* Gallery Section */
 .gallery-section {
